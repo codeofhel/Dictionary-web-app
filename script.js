@@ -55,7 +55,7 @@ function handleSearch(w) {
             const result = data.find((elem) => {
                 return elem[key] != ""
             })
-            return result[key];
+            return result ? result[key] :"no_phonetic";
         }
         return "no_phonetic";
     }
