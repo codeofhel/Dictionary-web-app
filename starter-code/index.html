@@ -1,14 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Dictionary web app</title>
 </head>
-<body>
 
+<body data-theme="light">
+  <div class="wrapper flex-column">
+    <header>
+      <div class="container flex-row space-between">
+        <img src="./assets/images/logo.svg" alt="" srcset="" width="32" height="36">
+        <div class="flex-row">
+          <div class="selectInput">
+            <select class="fas fa-angle-down" name="" id="selectFont" data-theme="light">
+              <option value="inter">Sans Serif</option>
+              <option value="lora" selected>Serif</option>
+              <option value="inconsolata">Mono</option>
+            </select>
+            <span class="arrow"></span>
+          </div>
+          <div class="separator_vertical flex-row">
+            <div class="line"></div>
+          </div>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <div class="theme__icon">
+            <img src="./assets/images/icon-moon.svg" alt="" srcset="" width="20" height="20" data-theme="light">
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="search__container">
+          <form id="myForm" method="get">
+            <input type="text" name="word" id="searchInput" data-theme="light" onfocus="RemoveError()"
+              onblur="checkvalue()" placeholder="Search for any word...">
+            <span id="handleSearch" onclick="handleSearch()"></span>
+          </form>
+        </div>
+        <div class="search_result flex-row space-between">
+          <div class="data__title__item">
+            <h1 class="fs-900 fw-semi" data-theme="light" data-info="word">keyboard</h1>
+            <p class="fs-600 fw-regular clr-primary" data-info="phoneticText">/ˈkiːbɔːd/</p>
+          </div>
+          <div class="data__title__item">
+            <a href="#" data-info="phoneticSound"><img src="./assets/images/icon-play.svg" alt="" srcset="" width="48"
+                height="48"></a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="data__container">
+          <div class="separator flex-row">
+            <p class="fs-600 fw-semi" data-theme="light"><i>noun</i></p>
+            <div class="line"></div>
+          </div>
+          <div class="data__subtitle__item" data-theme="light">
+            <h2 class="fs-400 fw-regular">Meaning</h2>
+          </div>
+          <div class="data__info__item pd-100-inline fs-300 fw-regular">
+            <ul role="list" data-theme="light" data-info="list_definition">
+              <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+              <li>A component of many instruments including the piano, organ, and harpsichord consisting of usually
+                black and white keys that cause different tones to be produced when struck.</li>
+              <li>A device with keys of a musical keyboard, used to control electronic sound-producing devices which may
+                be built into or separate from the keyboard</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="flex-row synonyms">
+          <div class="synonyms_title">
+            <p class="fs-400 fw-regular">Synonyms</p>
+          </div>
+          <div>
+            <p class="fs-400 fw-semi clr-primary" data-info="synonyms">electronic keyboard</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="separator flex-row">
+          <p class="fs-600 fw-semi"><i>verb</i></p>
+          <div class="line"></div>
+        </div>
+        <div class="data__subtitle__item">
+          <h2 class="fs-400 fw-regular">Meaning</h2>
+        </div>
+        <div class="data__info__item pd-100-inline fs-300 fw-regular">
+          <ul role="list" data-info="list_definition_verb">
+            <li>To type on a computer keyboard. </li>
+            <p>“Keyboarding is the part of this job I hate the most.”</p>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="separator ">
+          <div class="line"></div>
+        </div>
+        <div class="source__container fs-200 fw-regular" data-theme="light">
+          <p>Source</p>
+          <p data-info="sourceUrls">https://en.wiktionary.org/wiki/keyboard</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
